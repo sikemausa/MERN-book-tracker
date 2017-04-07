@@ -1,0 +1,105 @@
+Book resource model
+
+{
+  name: 'bookName'
+}
+
+Goal resource model
+
+{
+  type: ['books', 'pages', 'chapters'],
+  period: ['day','week','month','year']
+}
+
+API Routes
+
+{
+  "GET /goal",
+  "description": "returns reading goal",
+  "response": "200 application/json",
+  "data": {}
+}
+
+{
+  "POST /goal",
+  "description": "create and return a goal using the created object as the response",
+  "response": "201 application/json",
+  "data": {}
+}
+
+{
+  "PUT /goal",
+  "description": "update and return the goal",
+  "response": "200 application/json",
+  "data": {}
+}
+
+{
+  "DELETE /goals/:id",
+  "description": "delete and return the matching goal",
+  "response": "200 application/json",
+  "data": {}
+}
+
+{
+  "GET /finishedBooks",
+  "description": "returns all finished books",
+  "response": "200 application/json",
+  "data": [{}, {}, {}]
+}
+
+{
+  "GET /booksToRead",
+  "description": "returns all books to be read",
+  "response": "200 application/json",
+  "data": [{}, {}, {}]
+}
+
+{
+  "GET /booksInProgress",
+  "description": "returns all books that are in progress",
+  "response": "200 application/json",
+  "data": [{}, {}, {}]
+}
+
+{
+  "POST /finishedBooks",
+  "description": "create and return a new finished book using the posted object as the response",
+  "response": "201 application/json",
+  "data": {}
+}
+
+{
+  "POST /booksToRead",
+  "description": "create and return a new book to be read using the posted object as the response",
+  "response": "201 application/json",
+  "data": {}
+}
+
+{
+  "POST /booksInProgress",
+  "description": "create and return a book in progress using the posted object as the response",
+  "response": "201 application/json",
+  "data": {}
+}
+
+{
+  "Delete /finishedBooks/:id",
+  "description": "delete and return a new finished book using the posted object as the response",
+  "response": "200 application/json",
+  "data": {}
+}
+
+{
+  "Delete /booksToRead/:id",
+  "description": "delete and return a new book to be read using the posted object as the response",
+  "response": "200 application/json",
+  "data": {}
+}
+
+{
+  "Delete /booksInProgress/:id",
+  "description": "delete and return a book in progress using the posted object as the response",
+  "response": "200 application/json",
+  "data": {}
+}
