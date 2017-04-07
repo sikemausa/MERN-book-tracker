@@ -15,27 +15,34 @@ let booksToRead = [];
 let booksInProgress = [];
 let id = 0;
 
-app.get('/goal', function(req, res){
-  res.json(goal);
+app.get('/goal', (req, res) => {
+  res.send(goal);
 });
 
-app.post('/goal', function(req, res){
+app.post('/goal', (req, res) => {
   let goal = req.body;
   id++;
   goal.id = id;
   storedGoal = goal;
 });
 
-app.get('/finishedBooks', function(req, res){
-  res.json(finsishedBooks);
+app.put('/goal', (req, res) => {
+  let update = req.body;
+  if(update.id) delete update.id;
+  storedGoal = update;
+  res.send(update);
 });
 
-app.get('/booksToRead', function(req, res){
-  res.json(booksToRead);
+app.get('/finishedBooks', (req, res) => {
+  res.send(finsishedBooks);
 });
 
-app.get('/booksInProgress', function(req, res){
-  res.json(booksInProgress);
+app.get('/booksToRead', (req, res) => {
+  res.send(booksToRead);
+});
+
+app.get('/booksInProgress', (req, res) => {
+  res.send(booksInProgress);
 });
 
 app.listen(3000);
